@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Hidden, Box, Stack } from '@mui/material';
+import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, Hidden, Stack } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
