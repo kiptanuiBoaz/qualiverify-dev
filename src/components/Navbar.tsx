@@ -19,7 +19,7 @@ export const Navbar = () => {
     const menuItems = ["About Us", "Features", "Solutions", "Pricing", "Contact Us"];
 
     return (
-        <AppBar sx={{ backgroundColor: "background.paper", boxShadow: "none", py: isMobile ? 0 : 1 }} position="static">
+        <AppBar sx={{ backgroundColor: "background.paper", boxShadow: "none", py: isMobile ? 0 : 1 }} position="fixed">
             <Toolbar>
                 <img
                     style={{ width: isMobile ? "40px" : "200px", height: isMobile ? "40px" : "70px" }}
