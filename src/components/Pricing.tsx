@@ -1,5 +1,4 @@
 import { Box, Container, Typography, Grid, Card, CardContent, Button } from '@mui/material';
-import React from 'react';
 
 const pricingPlans = [
     {
