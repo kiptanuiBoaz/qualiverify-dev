@@ -5,7 +5,7 @@ const pricingPlans = [
         plan: "Basic",
         price: "$19",
         items: ["Feature 1", "Feature 2", "Feature 3"],
-        backgroundColor: "background.paper"
+        backgroundColor: "#f4f4f5"
     },
     {
         plan: "Standard",
@@ -18,7 +18,7 @@ const pricingPlans = [
         plan: "Premium",
         price: "$99",
         items: ["Feature 1", "Feature 2", "Feature 3"],
-        backgroundColor: "background.paper"
+        backgroundColor: "#f4f4f5"
     }
 ];
 
@@ -38,7 +38,7 @@ export const Pricing = () => {
                     </Typography>
                 </Box>
 
-                <Grid container spacing={4} sx={{ mt: 4, display: "flex", alignItems: "center" }}>
+                <Grid container spacing={4} sx={{ mt: 2, display: "flex", alignItems: "center", pb: 5 }}>
                     {pricingPlans.map((plan, index) => (
                         <Grid item xs={12} md={4} key={index}>
                             <Card
@@ -50,12 +50,12 @@ export const Pricing = () => {
                                     flexDirection: 'column',
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
-                                    pb: 2,
+                                    py: 4,
 
                                 }}
                             >
                                 <CardContent sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                    <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+                                    <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
                                         {plan.plan}
                                     </Typography>
                                     <Typography variant="h3" sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
@@ -63,7 +63,11 @@ export const Pricing = () => {
                                     </Typography>
                                     <Box sx={{ textAlign: 'center', mb: 2 }}>
                                         {plan.items.map((item, idx) => (
-                                            <Typography key={idx} variant="body1" sx={{ mt: 1 }}>
+                                            <Typography
+                                                key={idx}
+                                                variant="body1"
+                                                sx={{ fontFamily: '"Plus Jakarta Sans", serif;', fontWeight: 400, mt: 1, color: index === 1 ? "#fff" : "text.secondary" }}
+                                            >
                                                 {item}
                                             </Typography>
                                         ))}
