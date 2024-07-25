@@ -2,12 +2,16 @@ import {
     Container,
     Grid,
     Typography,
+    useMediaQuery,
+    useTheme,
 } from '@mui/material';
 import { useRef } from 'react';
 import { useScrollTriggeredCountUp } from '../hooks/import { useScrollTriggeredCountUp } from \'./useScrollTriggeredCountUp';
 
 export const Stats = () => {
     const ref = useRef<HTMLDivElement>(null);
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const ourReachAndProgress = [
         {
@@ -34,13 +38,15 @@ export const Stats = () => {
         <Container
             component="section"
             sx={{
+                width: "80%",
                 padding: '5%',
                 backgroundColor: "primary.main",
                 position: "absolute",
-                bottom: "35%",
+                top: { lg: "101%" },
                 borderRadius: 5,
                 left: '50%',
                 transform: 'translateX(-50%)',
+                zIndex: 100
             }}
         >
 
@@ -49,7 +55,7 @@ export const Stats = () => {
                     <Grid key={id} item xs={12} sm={6} lg={4}>
                         <Typography
                             ref={ref}
-                            variant="h3"
+                            variant={isMobile ? "h6" : "h3"}
                             component="p"
                             textAlign="center"
                             color="#fff"

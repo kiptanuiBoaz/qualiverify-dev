@@ -38,7 +38,7 @@ export const Pricing = () => {
                     </Typography>
                 </Box>
 
-                <Grid container spacing={4} sx={{ mt: 4, display: "flex", alignItems: "baseline" }}>
+                <Grid container spacing={4} sx={{ mt: 4, display: "flex", alignItems: "center" }}>
                     {pricingPlans.map((plan, index) => (
                         <Grid item xs={12} md={4} key={index}>
                             <Card

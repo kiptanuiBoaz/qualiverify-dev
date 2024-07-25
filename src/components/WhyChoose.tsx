@@ -34,7 +34,8 @@ export const WhyChoose = () => {
     ];
 
     return (
-        <Box sx={{ backgroundColor: "background.default", pb: 0, position: "relative" }}>
+        <Box sx={{ backgroundColor: "background.default", pb: 0, position: "relative", pt: "7%" }}>
+
             <Container sx={{ py: 8, }}>
                 <Typography
                     sx={{

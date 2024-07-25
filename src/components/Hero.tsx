@@ -1,6 +1,7 @@
 import { Grid, Typography, Button, TextField, Card, CardContent, Box, Container, MenuItem, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import desktopLogo from "/public/logo.png";
+import { Stats } from './Stats';
 
 
 export const Hero = () => {
@@ -117,6 +118,8 @@ export const Hero = () => {
                         </Card>
                     </Grid>
                 </Grid>
+
+                <Stats />
             </Container>
 
         </Box>
