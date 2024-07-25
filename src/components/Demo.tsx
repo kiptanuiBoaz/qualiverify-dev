@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player/lazy';
 import PlayCircleFilledOutlinedIcon from '@mui/icons-material/PlayCircleFilledOutlined';
 export const Demo = () => {
     return (
-        <Box sx={{ backgroundColor: "rgba(0,0,0,1)" }}>
+        <Box sx={{ backgroundColor: "rgba(0,0,0,.3)" }}>
             <ReactPlayer
                 playing={false}
                 width={'100%'}
