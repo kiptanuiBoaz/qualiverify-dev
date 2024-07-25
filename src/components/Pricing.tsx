@@ -55,7 +55,7 @@ export const Pricing = () => {
                                 }}
                             >
                                 <CardContent sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                    <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                                    <Typography variant="subtitle1" sx={{ fontWeight: 600, textTransform: "uppercase" }}>
                                         {plan.plan}
                                     </Typography>
                                     <Typography variant="h3" sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
