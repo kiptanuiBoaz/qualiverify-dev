@@ -22,10 +22,11 @@ export const Cta = () => {
                 </Box>
 
                 <Stack spacing={3} direction={"row"} justifyContent={"center"} py={6} >
-                    <Button sx={{ py: 2, px: "5%", textTransform: "none", backgroundColor: "secondary.main", color: "#fff" }} size={"large"} variant="contained">
+                    <Button color="secondary" sx={{ py: 2, px: "5%", textTransform: "none", backgroundColor: "secondary.main", color: "#fff" }} size={"large"} variant="contained">
                         Start  Verification
                     </Button>
-                    <Button sx={{ py: 2, px: "5%", textTransform: "none", color: "#000", backgroundColor: "#fff" }} size={"large"} variant="contained">
+
+                    <Button sx={{ py: 2, px: "5%", textTransform: "none", color: "#000", backgroundColor: "#fff", "&:hover": { backgroundColor: "#ccc" } }} size={"large"} variant="contained">
                         Schedule Demo
                     </Button>
                 </Stack>
