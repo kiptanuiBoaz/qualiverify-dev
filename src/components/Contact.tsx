@@ -4,8 +4,9 @@ export const Contact = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-    return (
-        <Box sx={{ backgroundColor: "background.paper", pb: 20 }}>
+    return (<>
+
+        <Box sx={{ backgroundColor: "background.paper", pb: 7 }}>
             <Container>
                 <Grid container spacing={6} justifyContent="space-between" sx={{ px: 0, py: 4 }}>
                     {/* Left Column */}
@@ -37,7 +38,16 @@ export const Contact = () => {
 
                     {/* Right Column */}
                     <Grid item xs={12} md={5}>
-                        <Card sx={{ width: isMobile ? "85%" : "30%", backgroundColor: "background.default", py: 2, px: 1, boxShadow: 2, position: "absolute" }}>
+                        <Card sx={{
+                            width: isMobile ? "85%" : "30%",
+                            backgroundColor: "background.default",
+                            py: 2,
+                            px: 1,
+                            boxShadow: 2,
+                            position: "absolute",
+                            left: !isMobile ? "" : '50%',
+                            transform: !isMobile ? "" : 'translateX(-50%)',
+                        }}>
                             <CardContent>
                                 <Typography color={"text.primary"} variant="h5" gutterBottom>
                                     Contact Us
@@ -102,7 +112,10 @@ export const Contact = () => {
             </Container>
 
         </Box>
+        <Box sx={{ backgroundColor: "#fff", height: isMobile ? "55vh" : "30vh" }}>
 
+        </Box>
+    </>
     );
 };
 
