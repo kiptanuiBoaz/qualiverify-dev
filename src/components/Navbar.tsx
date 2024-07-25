@@ -3,6 +3,9 @@ import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemTe
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import mobileLogo from "/public/mobile-logo.png";
+import desktopLogo from "/public/logo.png";
+
 
 export const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -20,7 +23,7 @@ export const Navbar = () => {
             <Toolbar>
                 <img
                     style={{ width: isMobile ? "40px" : "200px", height: isMobile ? "40px" : "70px" }}
-                    src={isMobile ? "/public/mobile-logo.png" : "/public/logo.png"}
+                    src={isMobile ? mobileLogo : desktopLogo}
                     alt="Qualiverify logo"
                 />
 

@@ -1,5 +1,7 @@
 import { Grid, Typography, Button, TextField, Card, CardContent, Box, Container, MenuItem, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import desktopLogo from "/public/logo.png";
+
 
 export const Hero = () => {
     return (
@@ -30,17 +32,17 @@ export const Hero = () => {
                             <Stack spacing={2} direction="row">
                                 <img
                                     style={{ width: "150px", height: "40px", filter: 'grayscale(1)' }}
-                                    src={"/public/logo.png"}
+                                    src={desktopLogo}
                                     alt="Qualiverify logo"
                                 />
                                 <img
                                     style={{ width: "150px", height: "40px", filter: 'grayscale(1)' }}
-                                    src={"/public/logo.png"}
+                                    src={desktopLogo}
                                     alt="Qualiverify logo"
                                 />
                                 <img
                                     style={{ width: "150px", height: "40px", filter: 'grayscale(1)' }}
-                                    src={"/public/logo.png"}
+                                    src={desktopLogo}
                                     alt="Qualiverify logo"
                                 />
                             </Stack>
