@@ -3,20 +3,20 @@ import { Box, Container, Typography, Grid, Card, CardContent, Button } from '@mu
 const pricingPlans = [
     {
         plan: "Basic",
-        price: "$19",
+        price: "19",
         items: ["Feature 1", "Feature 2", "Feature 3"],
         backgroundColor: "#f4f4f5"
     },
     {
         plan: "Standard",
-        price: "$49",
+        price: "49",
         items: ["Feature 1", "Feature 2", "Feature 3", "Feature 4", "Feature 5"],
         backgroundColor: "primary.main",
         textColor: "primary.contrastText"
     },
     {
         plan: "Premium",
-        price: "$99",
+        price: "99",
         items: ["Feature 1", "Feature 2", "Feature 3"],
         backgroundColor: "#f4f4f5"
     }
@@ -58,7 +58,7 @@ export const Pricing = () => {
                                     <Typography variant="subtitle1" sx={{ fontWeight: 600, textTransform: "uppercase" }}>
                                         {plan.plan}
                                     </Typography>
-                                    <Typography variant="h3" sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
+                                    <Typography variant="h3" sx={{ display: 'flex', alignItems: 'baseline', my: 2 }}>
                                         <Typography component="span" variant="h5">$</Typography>{plan.price}
                                     </Typography>
                                     <Box sx={{ textAlign: 'center', mb: 2 }}>
