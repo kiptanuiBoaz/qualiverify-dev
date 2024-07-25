@@ -5,7 +5,7 @@ import desktopLogo from "/public/logo.png";
 
 export const Hero = () => {
     return (
-        <Box sx={{ backgroundColor: "background.paper", pb: 20 }}>
+        <Box sx={{ backgroundColor: "background.paper", pb: 20, pt: 20 }}>
             <Container>
                 <Grid container spacing={6} alignItems="center" justifyContent="space-between" sx={{ px: 0, py: 4 }}>
                     {/* Left Column */}
