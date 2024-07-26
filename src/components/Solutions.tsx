@@ -2,27 +2,32 @@ import { useState } from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, List, ListItem } from '@mui/material';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { Element } from 'react-scroll';
+import employersImg from '../assets/solutions_employers.jpeg';
+import individualsImg from '../assets/solutions_individual.jpeg';
+import licensingImg from '../assets/solutions_licencing.jpeg';
+import educational from '../assets/solutions_educational.jpeg';
+
 
 const options = [
     {
         title: "Employers",
         description: "Verify candidate qualifications for recruitment decisions.",
-        image: "image1.png", // Replace with actual image paths
+        image: employersImg // Replace with actual image paths
     },
     {
         title: "Educational Institutions",
         description: "Streamline admissions by verifying student transcripts and diplomas.",
-        image: "image2.png",
+        image: educational,
     },
     {
         title: "Licensing bodies",
         description: "Ensure regulatory compliance by verifying professional licenses.",
-        image: "image3.png",
+        image: licensingImg,
     },
     {
         title: "Individuals",
         description: "Get your own qualifications verified for international opportunities.",
-        image: "image4.png",
+        image: individualsImg,
     },
 ];
 
@@ -33,7 +38,7 @@ export const Solutions = () => {
         <Element name="Solutions">
             <Container sx={{ py: 10 }}>
                 <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={5}>
                         <Typography sx={{ fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h3" >
                             Tailored   <span style={{ backgroundColor: '#ff9f61' }}>Solutions</span>
                         </Typography>
@@ -97,13 +102,14 @@ export const Solutions = () => {
                             ))}
                         </List>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Card sx={{ padding: 0, boxShadow: 'none', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Grid item xs={12} md={7}>
+                        <Card sx={{ backgroundImage: 'url("/assets/solutions_bg.png")', padding: 0, boxShadow: 'none', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <CardContent>
+
                                 <img
                                     src={options[activeOption].image}
                                     alt={options[activeOption].title}
-                                    style={{ width: '100%', height: 'auto' }}
+                                    style={{ width: '100%', objectFit: 'cover' }}
                                 />
                             </CardContent>
                         </Card>
