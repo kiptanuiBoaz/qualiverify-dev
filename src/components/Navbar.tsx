@@ -35,7 +35,7 @@ export const Navbar = () => {
                                 size='large'
                                 sx={{ textTransform: "none", color: "#201F22", fontWeight: 500, fontSize: 16, fontFamily: '"Plus Jakarta Sans", sans-serif;' }}
                                 key={index}
-                            // color="primary"
+
                             >
                                 <Link
                                     activeClass="active"
@@ -53,6 +53,7 @@ export const Navbar = () => {
                         ))}
                     </Hidden>
                 </Stack>
+
                 <Hidden mdDown>
                     <Button sx={{ textTransform: "none" }} size="large" variant="contained" color="primary">Get Started</Button>
                 </Hidden>

@@ -21,10 +21,10 @@ export const Contact = () => {
                             <Typography sx={{
                                 mb: 2, fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;'
                             }} color={"text.secondary"} variant="body1" gutterBottom>
-                                If you have any questions about the subscription or are not sure which plan is right for you, contact our team and let’s schedule a call.
+                                If you have any questions about the subscription or are not sure which plan is right for you, contact our team and let's schedule a call.
                             </Typography>
-                            <Stack direction="row" spacing={6}>
-                                <Box sx={{ backgroundColor: "primary.main", borderRadius: "10px", p: 2 }}>
+                            <Stack direction={isMobile ? "column" : "row"} spacing={6}>
+                                <Box sx={{ backgroundColor: "primary.main", borderRadius: "10px", p: 2, }}>
                                     <Typography sx={{ fontSize: 14, fontWeight: 800, fontFamily: '"Libre Baskerville", sans-serif;', color: "#fff" }}>Call us</Typography>
                                     <Typography sx={{ fontSize: 16, fontWeight: 400, fontFamily: '"Libre Baskerville",sans-serif;', color: "#fff" }} >+0712345678</Typography>
 

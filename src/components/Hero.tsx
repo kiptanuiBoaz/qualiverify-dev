@@ -3,7 +3,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import desktopLogo from "/public/logo.png";
 import { Stats } from './Stats';
 
-
 export const Hero = () => {
     return (
         <Box sx={{ backgroundColor: "background.paper", pb: 20, pt: 20 }}>
@@ -12,7 +11,7 @@ export const Hero = () => {
                     {/* Left Column */}
                     <Grid px={0} item xs={12} md={6}>
                         <Typography sx={{ mt: 7, fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h3" gutterBottom>
-                            Verify  <span style={{ backgroundColor: '#5ecaea' }}>Credentials</span>
+                            Verify <span style={{ backgroundColor: '#5ecaea' }}>Credentials</span>
                         </Typography>
                         <Typography sx={{ fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h3" gutterBottom>
                             From anywhere. In Seconds
@@ -61,40 +60,45 @@ export const Hero = () => {
                                     Get Quick Verification
                                 </Typography>
                                 <form noValidate autoComplete="off">
-
                                     <TextField
                                         variant="outlined"
                                         fullWidth
                                         select
                                         margin="normal"
                                         label="Select Institution"
-
+                                        InputProps={{
+                                            style: { fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' },
+                                        }}
                                         sx={{ backgroundColor: "#EFEFEF" }}
                                     >
-                                        <MenuItem value="uon">UON</MenuItem>
-                                        <MenuItem value="uon">Africa Nazarene</MenuItem>
-                                        <MenuItem value="uon">CUEA</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="uon">UON</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="an">Africa Nazarene</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="cuea">CUEA</MenuItem>
                                     </TextField>
                                     <TextField
                                         variant="outlined"
                                         fullWidth
                                         margin="normal"
                                         label="ID Number"
+                                        InputProps={{
+                                            style: { fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' },
+                                        }}
                                         sx={{ backgroundColor: "#EFEFEF" }}
                                     />
-
                                     <TextField
                                         variant="outlined"
                                         fullWidth
                                         select
                                         margin="normal"
                                         label="Certification type"
-
+                                        InputProps={{
+                                            style: { fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' },
+                                        }}
                                         sx={{ backgroundColor: "#EFEFEF" }}
                                     >
-                                        <MenuItem value="uon">Transcripts</MenuItem>
-                                        <MenuItem value="uon">PostGrad Degree</MenuItem>
-                                        <MenuItem value="uon">Undergrad Degree</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="transcripts">Transcripts</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="postgrad">PostGrad Degree</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="undergrad">Undergrad Degree</MenuItem>
                                     </TextField>
                                     <TextField
                                         variant="outlined"
@@ -102,14 +106,15 @@ export const Hero = () => {
                                         select
                                         margin="normal"
                                         label="Qualification type"
-                                        sx={{ backgroundColor: "#EFEFEF", fontWeight: "normal" }}
+                                        InputProps={{
+                                            style: { fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' },
+                                        }}
+                                        sx={{ backgroundColor: "#EFEFEF" }}
                                     >
-                                        <MenuItem sx={{ fontWeight: "normal" }} value="uon">Degree</MenuItem>
-                                        <MenuItem value="uon">Diploma</MenuItem>
-                                        <MenuItem value="uon">Post-graduate </MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="degree">Degree</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="diploma">Diploma</MenuItem>
+                                        <MenuItem sx={{ fontWeight: 400, fontFamily: '"Plus Jakarta Sans", serif;' }} value="postgraduate">Post-graduate</MenuItem>
                                     </TextField>
-
-
                                     <Button sx={{ mt: 1, mb: 2, textTransform: "none", py: 1 }} size="large" type="submit" variant="contained" color="primary" fullWidth>
                                         Check Verification
                                     </Button>
@@ -126,4 +131,3 @@ export const Hero = () => {
 
     );
 };
-

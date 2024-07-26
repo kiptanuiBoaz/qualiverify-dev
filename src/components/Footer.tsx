@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Typography, IconButton, Divider } from '@mui/material';
 import { LocationOn, Email, Facebook, Twitter, Instagram } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 export const Footer = () => {
     return (
@@ -9,7 +9,7 @@ export const Footer = () => {
             <Container>
                 <Grid container spacing={2} sx={{ mb: 4 }}>
                     <Grid item xs={12} md={8}>
-                        <Typography sx={{ fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h3" gutterBottom>
+                        <Typography sx={{ fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h4" gutterBottom>
                             QualiVerify provides reliable verification of academic and professional qualifications.
                         </Typography>
                     </Grid>
@@ -41,16 +41,29 @@ export const Footer = () => {
                 <Grid justifyContent={'space-between'} container spacing={2}>
                     <Grid item xs={12} md={8}>
                         <Box gap={2} sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                            <Typography variant="body2">Pricing</Typography>
-                            <Typography variant="body2">Solutions</Typography>
-                            <Typography variant="body2">Features</Typography>
-                            <Typography variant="body2">Contact Us</Typography>
+                            {["Pricing", "Solutions", "Features", "Contact Us"].map(l => <Typography
+                                key={l}
+                                variant="body2"
+                                sx={{ fontWeight: 500, fontSize: 16, fontFamily: '"Plus Jakarta Sans", sans-serif;', cursor: "pointer" }}
+                            >
+                                <Link
+                                    to={l}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-50}
+                                    duration={500}
+                                >
+                                    {l}
+                                </Link>
+                            </Typography>)}
+
+
                         </Box>
                     </Grid>
 
                     <Grid item xs={12} md={4}>
                         <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                            <Typography variant="body2">
+                            <Typography variant="body2" sx={{ fontWeight: 500, fontSize: 16, fontFamily: '"Plus Jakarta Sans", sans-serif;' }}>
                                 &copy; {new Date().getFullYear()} Company. All rights reserved.
                             </Typography>
                         </Box>
