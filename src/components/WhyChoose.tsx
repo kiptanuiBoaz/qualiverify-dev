@@ -3,6 +3,7 @@ import SpeedOutlinedIcon from '@mui/icons-material/SpeedOutlined';
 import LanguageIcon from '@mui/icons-material/Language';
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
+import { Element } from 'react-scroll';
 
 export const WhyChoose = () => {
     const features = [
@@ -34,47 +35,51 @@ export const WhyChoose = () => {
     ];
 
     return (
-        <Box sx={{ backgroundColor: "background.default", pb: 0, position: "relative", pt: "7%" }}>
-            <Container sx={{ py: 8, }}>
-                <Typography
-                    sx={{
-                        py: 2,
-                        fontWeight: 400,
-                        fontFamily: '"Libre Baskerville", serif',
-                        textAlign: "center"
-                    }}
-                    variant="h3"
-                    gutterBottom
-                >
-                    Why Choose <span style={{ backgroundColor: "#C2EED8" }}>Qualiverify</span>
-                </Typography>
-                <Grid container spacing={3}>
-                    {features.map((feature, index) => (
-                        <Grid item xs={12} md={6} key={index}>
-                            <Card sx={{ display: "flex", boxShadow: "none", backgroundColor: "background.default" }}>
-                                <Box sx={{ display: "flex", alignItems: "center", p: 4 }}>
-                                    <Icon sx={{ color: "#fff", p: 2, m: 1, backgroundColor: feature.bg, borderRadius: 50 }}>
-                                        {feature.icon}
-                                    </Icon>
+        <Element name="About Us">
 
-                                    <CardContent>
-                                        <Typography
-                                            gutterBottom
-                                            variant='h6'
-                                            sx={{ fontSize: "18px", color: "#000", fontWeight: 700, fontFamily: '"Plus Jakarta Sans", serif;' }}
-                                        >
-                                            {feature.title}
-                                        </Typography>
-                                        <Typography sx={{ color: '#52525B', fontWeight: 400, fontSize: "16px", fontFamily: '"Plus Jakarta Sans", serif;' }} >
-                                            {feature.description}
-                                        </Typography>
-                                    </CardContent>
-                                </Box>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-        </Box>
+            <Box sx={{ backgroundColor: "background.default", pb: 0, position: "relative", pt: "7%" }}>
+                <Container sx={{ py: 8, }}>
+                    <Typography
+                        sx={{
+                            py: 2,
+                            fontWeight: 400,
+                            fontFamily: '"Libre Baskerville", serif',
+                            textAlign: "center"
+                        }}
+                        variant="h3"
+                        gutterBottom
+                    >
+                        Why Choose <span style={{ backgroundColor: "#C2EED8" }}>Qualiverify</span>
+                    </Typography>
+                    <Grid container spacing={3}>
+                        {features.map((feature, index) => (
+                            <Grid item xs={12} md={6} key={index}>
+                                <Card sx={{ display: "flex", boxShadow: "none", backgroundColor: "background.default" }}>
+                                    <Box sx={{ display: "flex", alignItems: "center", p: 4 }}>
+                                        <Icon sx={{ color: "#fff", p: 2, m: 1, backgroundColor: feature.bg, borderRadius: 50 }}>
+                                            {feature.icon}
+                                        </Icon>
+
+                                        <CardContent>
+                                            <Typography
+                                                gutterBottom
+                                                variant='h6'
+                                                sx={{ fontSize: "18px", color: "#000", fontWeight: 700, fontFamily: '"Plus Jakarta Sans", serif;' }}
+                                            >
+                                                {feature.title}
+                                            </Typography>
+                                            <Typography sx={{ color: '#52525B', fontWeight: 400, fontSize: "16px", fontFamily: '"Plus Jakarta Sans", serif;' }} >
+                                                {feature.description}
+                                            </Typography>
+                                        </CardContent>
+                                    </Box>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Container>
+            </Box>
+        </Element>
+
     );
 };

@@ -3,3 +3,8 @@ body{
   padding:0;
    font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+.active {
+  color:"#20447A";
+  font-weight: bold;
+}

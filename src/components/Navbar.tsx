@@ -5,6 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import mobileLogo from "/public/mobile-logo.png";
 import desktopLogo from "/public/logo.png";
+import { Link } from 'react-scroll';
 
 
 export const Navbar = () => {
@@ -32,11 +33,22 @@ export const Navbar = () => {
                         {menuItems.map((item, index) => (
                             <Button
                                 size='large'
-                                sx={{ textTransform: "none", color: "#201F22", fontWeight: "500", fontSize: 16 }}
+                                sx={{ textTransform: "none", color: "#201F22", fontWeight: 500, fontSize: 16, fontFamily: '"Plus Jakarta Sans", sans-serif;' }}
                                 key={index}
                             // color="primary"
                             >
-                                {item}
+                                <Link
+                                    activeClass="active"
+                                    to={item}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-50}
+                                    duration={500}
+                                // onSetActive={handleSetActive}
+                                >
+                                    {item}
+                                </Link>
+
                             </Button>
                         ))}
                     </Hidden>
