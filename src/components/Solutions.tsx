@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Box, Container, Typography, Grid, Card, CardContent, List, ListItem } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, List, ListItem, useTheme, useMediaQuery } from '@mui/material';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { Element } from 'react-scroll';
 import employersImg from '../assets/solutions_employers.jpeg';
 import individualsImg from '../assets/solutions_individual.jpeg';
 import licensingImg from '../assets/solutions_licencing.jpeg';
 import educational from '../assets/solutions_educational.jpeg';
-
+import bg from "../assets/solutions_bg.png"
 
 const options = [
     {
@@ -33,15 +33,17 @@ const options = [
 
 export const Solutions = () => {
     const [activeOption, setActiveOption] = useState(0);
-
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <Element name="Solutions">
             <Container sx={{ py: 10 }}>
-                <Grid container spacing={4}>
+                <Grid container spacing={4} p={0}>
                     <Grid item xs={12} md={5}>
-                        <Typography sx={{ fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h3" >
+                        <Typography sx={{ mt: 2, fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h3" >
                             Tailored   <span style={{ backgroundColor: '#ff9f61' }}>Solutions</span>
                         </Typography>
+
                         <Typography sx={{ mt: 2, fontWeight: 400, fontFamily: '"Libre Baskerville", serif;' }} variant="h3" gutterBottom>
                             for your needs
                         </Typography>
@@ -61,8 +63,9 @@ export const Solutions = () => {
                                         borderBottom: activeOption === index ? '2px solid #20447A' : 'none',
                                         position: 'relative',
                                         pl: 3,
-                                        my: 2,
-                                        py: 2
+                                        my: 1,
+                                        py: 1
+
                                     }}
                                 >
                                     {activeOption === index && (
@@ -103,13 +106,24 @@ export const Solutions = () => {
                         </List>
                     </Grid>
                     <Grid item xs={12} md={7}>
-                        <Card sx={{ backgroundImage: 'url("/assets/solutions_bg.png")', padding: 0, boxShadow: 'none', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <CardContent>
+                        <Card sx={{
+                            backgroundImage: `url(${bg})`,
+                            padding: 0,
+                            boxShadow: 'none',
+                            height: '100%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'contain',
+                            backgroundColor: "#fff"
+                        }}>
+                            <CardContent sx={{ display: "flex", justifyContent: "center" }}>
 
                                 <img
                                     src={options[activeOption].image}
                                     alt={options[activeOption].title}
-                                    style={{ width: '100%', objectFit: 'cover' }}
+                                    style={{ width: isMobile ? "95%" : '90%', objectFit: 'cover', height: isMobile ? "50vh" : '60vh', borderRadius: 7 }}
                                 />
                             </CardContent>
                         </Card>
