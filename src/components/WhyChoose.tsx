@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Card, CardContent, Icon } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, Icon, useTheme, useMediaQuery } from '@mui/material';
 import SpeedOutlinedIcon from '@mui/icons-material/SpeedOutlined';
 import LanguageIcon from '@mui/icons-material/Language';
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
@@ -6,6 +6,8 @@ import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurned
 import { Element } from 'react-scroll';
 
 export const WhyChoose = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const features = [
         {
             icon: <LanguageIcon />,
@@ -51,12 +53,12 @@ export const WhyChoose = () => {
                     >
                         Why Choose <span style={{ backgroundColor: "#C2EED8" }}>Qualiverify</span>
                     </Typography>
-                    <Grid container spacing={3}>
+                    <Grid container spacing={isMobile ? 1 : 3}>
                         {features.map((feature, index) => (
                             <Grid item xs={12} md={6} key={index}>
                                 <Card sx={{ display: "flex", boxShadow: "none", backgroundColor: "background.default" }}>
-                                    <Box sx={{ display: "flex", alignItems: "center", p: 4 }}>
-                                        <Icon sx={{ color: "#fff", p: 2, m: 1, backgroundColor: feature.bg, borderRadius: 50 }}>
+                                    <Box sx={{ display: "flex", alignItems: "center", p: isMobile ? 2 : 4, flexDirection: isMobile ? "column" : "row" }}>
+                                        <Icon sx={{ color: "#fff", p: isMobile ? 1 : 2, m: isMobile ? 0 : 1, backgroundColor: feature.bg, borderRadius: 50 }}>
                                             {feature.icon}
                                         </Icon>
 
@@ -64,11 +66,11 @@ export const WhyChoose = () => {
                                             <Typography
                                                 gutterBottom
                                                 variant='h6'
-                                                sx={{ fontSize: "18px", color: "#000", fontWeight: 700, fontFamily: '"Plus Jakarta Sans", serif;' }}
+                                                sx={{ textAlign: isMobile ? "center" : "left", fontSize: "18px", color: "#000", fontWeight: 700, fontFamily: '"Plus Jakarta Sans", serif;' }}
                                             >
                                                 {feature.title}
                                             </Typography>
-                                            <Typography sx={{ color: '#52525B', fontWeight: 400, fontSize: "16px", fontFamily: '"Plus Jakarta Sans", serif;' }} >
+                                            <Typography sx={{ textAlign: isMobile ? "center" : "left", color: '#52525B', fontWeight: 400, fontSize: "16px", fontFamily: '"Plus Jakarta Sans", serif;' }} >
                                                 {feature.description}
                                             </Typography>
                                         </CardContent>
