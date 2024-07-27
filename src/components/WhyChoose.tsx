@@ -38,7 +38,6 @@ export const WhyChoose = () => {
 
     return (
         <Element name="About Us">
-
             <Box sx={{ backgroundColor: "background.default", pb: 0, position: "relative", pt: "7%" }}>
                 <Container sx={{ py: 8, }}>
                     <Typography

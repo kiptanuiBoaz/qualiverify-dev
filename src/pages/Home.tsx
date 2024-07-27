@@ -11,6 +11,7 @@ import { Cta } from '../components/Cta'
 import { Footer } from '../components/Footer'
 import { ScrollToTop } from '../components/ScrollToTop'
 
+
 const Home = () => {
     return (<Box component={"main"}>
         <Navbar />
