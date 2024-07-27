@@ -123,7 +123,7 @@ export const Features = () => {
                                 <img
                                     src={options[activeOption].image}
                                     alt={options[activeOption].title}
-                                    style={{ width: isMobile ? "95%" : '75%', height: 'auto', borderRadius: 7 }}
+                                    style={{ width: isMobile ? "95%" : '80%', height: 'auto', borderRadius: 7 }}
                                 />
                             </Box>
                         </Grid>
