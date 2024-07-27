@@ -1,17 +1,19 @@
 import React from 'react';
-import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, Hidden, Stack } from '@mui/material';
+import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, Hidden, Stack, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import mobileLogo from "/public/mobile-logo.png";
 import desktopLogo from "/public/logo.png";
 import { Link } from 'react-scroll';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = React.useState(false);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen);
@@ -55,7 +57,7 @@ export const Navbar = () => {
                 </Stack>
 
                 <Hidden mdDown>
-                    <Button sx={{ textTransform: "none" }} size="large" variant="contained" color="primary">Get Started</Button>
+                    <Button onClick={() => window.open("https://app.qualiverify.com/")} sx={{ textTransform: "none" }} size="large" variant="contained" color="primary">Get Started</Button>
                 </Hidden>
                 <Hidden mdUp>
                     <IconButton
@@ -76,11 +78,24 @@ export const Navbar = () => {
                 <List>
                     {menuItems.map((item, index) => (
                         <ListItem button key={index} onClick={handleDrawerToggle}>
-                            <ListItemText primary={item} />
+                            <ListItemText onClick={() => setDrawerOpen(false)}>
+                                <Link
+                                    activeClass="active"
+                                    to={item}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-50}
+                                    duration={500}
+                                // onSetActive={handleSetActive}
+                                >
+                                    {item}
+                                </Link>
+                            </ListItemText>
+
                         </ListItem>
                     ))}
                     <ListItem button onClick={handleDrawerToggle}>
-                        <Button sx={{ textTransform: "none" }} size="large" variant="contained" color="primary">Get Started</Button>
+                        <Button onClick={() => window.open("https://app.qualiverify.com/")} sx={{ textTransform: "none" }} size="large" variant="contained" color="primary">Get Started</Button>
                     </ListItem>
                 </List>
             </Drawer>
