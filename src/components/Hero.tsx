@@ -5,7 +5,8 @@ import { Stats } from './Stats';
 
 export const Hero = () => {
     return (
-        <Box sx={{ backgroundColor: "background.paper", pb: 20, pt: 20 }}>
+        <Box sx={{ backgroundColor: "background.paper", pb: 25, pt: 20 }}>
+
             <Container>
                 <Grid container spacing={6} alignItems="center" justifyContent="space-between" sx={{ px: 0, py: 4 }}>
                     {/* Left Column */}

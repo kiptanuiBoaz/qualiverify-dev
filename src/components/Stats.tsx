@@ -42,7 +42,7 @@ export const Stats = () => {
                 padding: '5%',
                 backgroundColor: "primary.main",
                 position: "absolute",
-                top: { lg: "101%" },
+                top: { lg: "111%" },
                 borderRadius: 5,
                 left: '50%',
                 transform: 'translateX(-50%)',

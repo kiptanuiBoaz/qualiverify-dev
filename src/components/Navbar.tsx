@@ -6,14 +6,12 @@ import { useMediaQuery } from '@mui/material';
 import mobileLogo from "/public/mobile-logo.png";
 import desktopLogo from "/public/logo.png";
 import { Link } from 'react-scroll';
-import { useNavigate } from 'react-router-dom';
 
 
 export const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = React.useState(false);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen);
