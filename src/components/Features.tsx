@@ -9,16 +9,19 @@ import bg from "../assets/features_bg.png"
 
 const options = [
     {
+        id: 1,
         title: "Secure verification methods",
         description: "Verify candidate qualifications for recruitment decisions.",
-        image: secureImg, // Replace with actual image paths
+        image: secureImg,
     },
     {
+        id: 2,
         title: "Data encryption",
         description: "Streamline admissions by verifying student transcripts and diplomas.",
         image: dataImg,
     },
     {
+        id: 3,
         title: "Compliance with relevant data privacy regulations",
         description: "Ensure regulatory compliance by verifying professional licenses.",
         image: complianceImg,
@@ -27,7 +30,7 @@ const options = [
 ];
 
 export const Features = () => {
-    const [activeOption, setActiveOption] = useState(0);
+    const [activeOption, setActiveOption] = useState(1);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -57,10 +60,10 @@ export const Features = () => {
                                     <ListItem
                                         key={index}
                                         button
-                                        onClick={() => setActiveOption(index)}
+                                        onClick={() => setActiveOption(option.id)}
                                         sx={{
                                             // backgroundColor: activeOption === index ? "background.paper" : "background.default",
-                                            borderTop: activeOption === index ? '2px solid #20447A' : '1.5px solid #D1D0D6',
+                                            borderTop: activeOption === option.id ? '2px solid #20447A' : '1.5px solid #D1D0D6',
                                             position: 'relative',
                                             pl: 3,
                                             py: 1,
@@ -73,12 +76,12 @@ export const Features = () => {
                                             <Typography
                                                 variant="subtitle2"
                                                 sx={{
-                                                    fontWeight: activeOption === index ? 600 : 400,
+                                                    fontWeight: activeOption === option.id ? 600 : 400,
                                                     color: '#000',
                                                     fontSize: "20px"
                                                 }}
                                             >
-                                                {activeOption === index && (
+                                                {activeOption === option.id && (
                                                     <ArrowForwardIosOutlinedIcon
                                                         fontSize='small'
                                                         sx={{
@@ -121,8 +124,8 @@ export const Features = () => {
 
                             }}>
                                 <img
-                                    src={options[activeOption].image}
-                                    alt={options[activeOption].title}
+                                    src={options.find(o => o.id === activeOption)?.image}
+                                    alt={options.find(o => o.id === activeOption)?.title}
                                     style={{ width: isMobile ? "95%" : '80%', height: 'auto', borderRadius: 7 }}
                                 />
                             </Box>
