@@ -30,7 +30,7 @@ const options = [
 ];
 
 export const Features = () => {
-    const [activeOption, setActiveOption] = useState(1);
+    const [activeOption, setActiveOption] = useState(options[0].id);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
